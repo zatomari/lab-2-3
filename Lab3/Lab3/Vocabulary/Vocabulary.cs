@@ -1,6 +1,6 @@
-namespace Lab2.Vocabulary;
+namespace Lab3.Vocabulary;
 
-using Lab2.Word;
+using Lab3.Word;
 using Microsoft.EntityFrameworkCore;
 
 // Класс словаря

@@ -1,8 +1,8 @@
-namespace Lab2.Dialog;
+namespace Lab3.Dialog;
 
-using Lab2.Input;
-using Lab2.Vocabulary;
-using Lab2.Word;
+using Lab3.Input;
+using Lab3.Vocabulary;
+using Lab3.Word;
 
 // Класс диалога для добавления слова в словарь
 public class DialogNewWord : Dialog {

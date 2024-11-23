@@ -1,4 +1,4 @@
-namespace Lab2.Word;
+namespace Lab3.Word;
 
 using System.Text;
 
