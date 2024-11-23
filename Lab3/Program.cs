@@ -1,10 +1,11 @@
 ﻿using Lab3.Dialog;
 using Lab3.Vocabulary;
+using Lab3.WebApp;
 
 public class Program {
-    public static async Task Main() {
+    public static void Main() {
         Vocabulary vocabulary = new Vocabulary("Dictionary.db");
 
-        await new DialogMain(vocabulary).Run("");
+        new WebApp(vocabulary);
     }
 }
