@@ -4,7 +4,8 @@ using Lab3.WebApp;
 public class Program {
     public static void Main() {
         Vocabulary vocabulary = new Vocabulary("Dictionary.db");
+        WebApp webapp = new WebApp(vocabulary);
 
-        new WebApp(vocabulary);
+        webapp.Run();
     }
 }

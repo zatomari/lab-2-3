@@ -18,7 +18,9 @@ public class WebApp {
         InitHas();
         InitGetWords();
         InitGetKnownWords();
+    }
 
+    public void Run() {
         app.Run();
     }
 
