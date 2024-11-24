@@ -1,5 +1,4 @@
-﻿using Lab3.Dialog;
-using Lab3.Vocabulary;
+﻿using Lab3.Vocabulary;
 using Lab3.WebApp;
 
 public class Program {
