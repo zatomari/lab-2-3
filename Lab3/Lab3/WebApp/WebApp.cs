@@ -6,24 +6,30 @@ using Microsoft.AspNetCore.Http;
 using Lab3.Vocabulary;
 using Lab3.Word;
 
+// Объект веб-приложения
 public class WebApp {
     private Vocabulary vcb;
     private WebApplication app;
 
+    // Создаём веб-приложение
     public WebApp(Vocabulary vcb) {
         this.vcb = vcb;
+        // Создаем сервер
         app = WebApplication.Create();
 
+    // Инициализируем конечные точки (end point)
         InitRoot();
         InitHas();
         InitGetWords();
         InitGetKnownWords();
     }
 
+    // Запускаем сервер
     public void Run() {
         app.Run();
     }
 
+    // Инициализация запроса к корню сервера
     private void InitRoot() {
         app.MapGet("/", () =>
             "Usage:\n\n" +
@@ -33,6 +39,7 @@ public class WebApp {
         );
     }
 
+    // Метод Has через REST
     private void InitHas() {
         app.MapGet("/api/has/{word}", async (string word) => {
             bool result = await vcb.Has(word);
@@ -41,6 +48,7 @@ public class WebApp {
         });
     }
 
+    // Метод GetWords через REST
     private void InitGetWords() {
         app.MapGet("/api/words/{root}", async (string root) => {
             Word[] words = await vcb.GetWords(root);
@@ -54,6 +62,8 @@ public class WebApp {
         });
     }
 
+
+    // Метод GetKnownWords через REST
     private void InitGetKnownWords() {
         app.MapGet("/api/known-words/{word}", async (string word) => {
             Word[] words = await vcb.GetKnownWords(word);
