@@ -41,7 +41,8 @@ public class WebApp {
 
     // Метод Has через REST
     private void InitHas() {
-        app.MapGet("/api/has/{word}", async (string word) => {
+        // /api/has?word=слово
+        app.MapGet("/api/has", async (string word) => {
             bool result = await vcb.Has(word);
 
             return Results.Json(result);
@@ -50,7 +51,8 @@ public class WebApp {
 
     // Метод GetWords через REST
     private void InitGetWords() {
-        app.MapGet("/api/words/{root}", async (string root) => {
+        // /api/words?root=корень
+        app.MapGet("/api/words", async (string root) => {
             Word[] words = await vcb.GetWords(root);
             string[] result = new string[words.Length];
 
@@ -65,7 +67,8 @@ public class WebApp {
 
     // Метод GetKnownWords через REST
     private void InitGetKnownWords() {
-        app.MapGet("/api/known-words/{word}", async (string word) => {
+        // /api/known-words?word=слово
+        app.MapGet("/api/known-words", async (string word) => {
             Word[] words = await vcb.GetKnownWords(word);
             string[] result = new string[words.Length];
 
