@@ -68,7 +68,7 @@ public class WebApp {
     // Метод GetKnownWords через REST
     private void InitGetKnownWords() {
         // /api/known-words?word=слово
-        app.MapGet("/api/known-words", async (string word) => {
+        app.MapPost("/api/known-words", async (string word) => {
             Word[] words = await vcb.GetKnownWords(word);
             string[] result = new string[words.Length];
 
